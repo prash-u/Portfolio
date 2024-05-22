@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEG Visualization</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/eeg-pipes@latest/dist/eeg-pipes.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/eeglib@latest/dist/eeglib.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../bio-tech-projects.html">Bio-Tech Projects</a></li>
+                <li><a href="../personal-projects.html">Personal Projects</a></li>
+                <li><a href="../about.html">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="eeg-visualization">
+        <h2>EEG Visualization</h2>
+        <div id="eeg-container"></div>
+        <div id="eeg-info"></div>
+    </section>
+    <footer>
+        <p>© Prashant Umrekar. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Assuming you have the EEG data loaded as an array
+        // Replace this example data with actual EEG data
+        const eegData = [
+            // Simulated EEG data
+            [0, 0.1, 0.2, 0.3, 0.4],
+            [0, 0.2, 0.4, 0.6, 0.8]
+        ];
+
+        // Using eeg-pipes to filter and process EEG data
+        const eegPipe = new EEGPipes(eegData);
+        eegPipe.filter({ type: 'bandpass', cutoffFrequencies: [1, 30] });
+
+        // Visualizing EEG data
+        const eegContainer = document.getElementById('eeg-container');
+        const eegPlot = new EEGPlot(eegPipe.data);
+        eegPlot.render(eegContainer);
+
+        // Display additional EEG info
+        const eegInfo = document.getElementById('eeg-info');
+        eegInfo.innerHTML = `
+            <p>Sampling Frequency: ${eegPipe.samplingFrequency}</p>
+            <p>Channels: ${eegPipe.channels.join(', ')}</p>
+        `;
+    </script>
+</body>
+</html>

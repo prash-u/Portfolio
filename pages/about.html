@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Bio-Tech Projects</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="bio-tech.html">Bio-Tech Projects</a></li>
+                <li><a href="personal-projects.html">Personal Projects</a></li>
+                <li><a href="about.html">About me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="projects">
+        <h2>Featured Bio-Tech Projects</h2>
+        <div class="project-grid">
+            <div class="project">
+                <h3>EEG Visualization</h3>
+                <p>A detailed look into brainwave activities using EEG data.</p>
+                <a href="pages/eeg.html">Learn More</a>
+            </div>
+            <div class="project">
+                <h3>Gene Expression Profiling</h3>
+                <p>Identifying gene expression patterns to understand disease mechanisms.</p>
+                <a href="pages/gene-profile.html">Learn More</a>
+            </div>
+            <div class="project">
+                <h3>Live Video Object Detection</h3>
+                <p>Real-time detection of objects using advanced AI algorithms.</p>
+                <a href="pages/object-detection.html">Learn More</a>
+            </div>
+        </div>
+    </section>
+        <footer>
+        <p>Copyright © Prashant Umrekar. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/prashant-umrekar/"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="assets/icons/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="assets/icons/github.png" alt="GitHub"></a>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                autoplay: true,
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear'
+            });
+        });
+    </script>
+</body>
+</html>

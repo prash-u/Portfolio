@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashant Umrekar - Senior Scientist</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="../pages/bio-tech.html">Bio-Tech Projects</a></li>
+                <li><a href="../pages/personal-projects.html">Personal Projects</a></li>
+                <li><a href="../pages/about.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="banner">
+        <div class="slider">
+            <div class="banner-slide" style="background-image: url('assets/images/banner1.jpg');">
+                <div class="banner-text">
+                    <h1>Discover Cutting-Edge Bio-Tech Projects</h1>
+                    <p>Explore the latest in EEG visualization and gene profiling.</p>
+                </div>
+            </div>
+            <div class="banner-slide" style="background-image: url('assets/images/banner2.jpg');">
+                <div class="banner-text">
+                    <h1>Innovative Object Detection</h1>
+                    <p>Experience real-time video analysis with advanced AI.</p>
+                </div>
+            </div>
+            <div class="banner-slide" style="background-image: url('assets/images/banner3.jpg');">
+                <div class="banner-text">
+                    <h1>Pokémon Card Valuation</h1>
+                    <p>Discover the value of your Pokémon card collection.</p>
+                </div>
+            </div>
+            <div class="banner-slide" style="background-image: url('assets/images/banner4.jpg');">
+                <div class="banner-text">
+                    <h1>Next-Gen Bioinformatics</h1>
+                    <p>Unlocking new insights with advanced bioinformatics tools.</p>
+                </div>
+            </div>
+            <div class="banner-slide" style="background-image: url('assets/images/banner5.jpg');">
+                <div class="banner-text">
+                    <h1>Cutting-Edge Lab Techniques</h1>
+                    <p>Innovative methods driving the future of biotechnology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <img src="assets/images/profile.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    I am Prashant Umrekar, a Scientist with a profound expertise in biotechnology and a passion for innovation. With over a decade of experience, I have led projects in EEG visualization, gene expression profiling, and AI-driven object detection. My journey in the scientific community is marked by a relentless pursuit of excellence and a commitment to advancing the frontiers of bioinformatics.
+                </p>
+                <p>
+                    My professional endeavors are complemented by a keen interest in photography and data science, where I blend artistic vision with analytical rigor. Whether unraveling the complexities of gene patterns or capturing the essence of life's moments through my lens, I thrive on pushing boundaries and embracing new challenges.
+                </p>
+                <p>
+                    Connect with me on <a href="https://www.linkedin.com/in/prashant-umrekar/" target="_blank">LinkedIn</a> to explore my professional achievements, or follow me on <a href="https://www.instagram.com/prashu_/" target="_blank">Instagram</a> to get a glimpse of my creative side. Let's collaborate and innovate together.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project">
+                <h3>EEG Visualization</h3>
+                <p>A detailed look into brainwave activities using EEG data.</p>
+                <a href="pages/eeg.html">Learn More</a>
+            </div>
+            <div class="project">
+                <h3>Gene Expression Profiling</h3>
+                <p>Identifying gene expression patterns to understand disease mechanisms.</p>
+                <a href="pages/gene-profile.html">Learn More</a>
+            </div>
+            <div class="project">
+                <h3>Live Video Object Detection</h3>
+                <p>Real-time detection of objects using advanced AI algorithms.</p>
+                <a href="pages/object-detection.html">Learn More</a>
+            </div>
+            <div class="project">
+                <h3>Instagram Photo Reel</h3>
+                <p>View a collection of my latest photos from Instagram.</p>
+                <a href="pages/photo-reel.html">View Gallery</a>
+            </div>
+            <div class="project">
+                <h3>Pokémon Card Scanner</h3>
+                <p>Scan and evaluate your Pokémon card collection with our advanced valuation tool.</p>
+                <a href="pages/pokemon.html">Scan Cards</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Copyright © Prashant Umrekar. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="assets/icons/x.png" alt="Twitter"></a>
+            <a href="https://www.linkedin.com/in/prashant-umrekar/"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="assets/icons/github.png" alt="GitHub"></a>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                autoplay: true,
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear'
+            });
+        });
+    </script>
+</body>
+</html>

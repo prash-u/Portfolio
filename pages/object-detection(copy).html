@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Pose Detection</title>
+    <style>
+        body { font-family: Arial, sans-serif; align-items: center; display: flex; justify-content: center; height: 100vh; margin: 0; }
+        canvas { border: 1px solid black; }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Hand Pose Detection</h1>
+        <video id="video" width="640" height="480" autoplay muted></video>
+        <canvas id="canvas" width="640" height="480"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+    <script>
+        async function loadModel() {
+            const model = await handpose.load();
+            console.log("Handpose model loaded.");
+            return model;
+        }
+
+        async function detectHands(model) {
+            const video = document.getElementById('video');
+            const canvas = document.getElementById('canvas');
+            const context = canvas.getContext('2d');
+            context.fillStyle = 'red';
+
+            // Start video
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+            } catch (error) {
+                console.error("Failed to load video stream:", error);
+                return;
+            }
+
+            video.addEventListener('loadeddata', () => {
+                async function runDetection() {
+                    const predictions = await model.estimateHands(video);
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    if (predictions.length > 0) {
+                        // Draw hand keypoints
+                        predictions.forEach(prediction => {
+                            const keypoints = prediction.landmarks;
+                            keypoints.forEach(point => {
+                                context.beginPath();
+                                context.arc(point[0], point[1], 5, 0, 2 * Math.PI);
+                                context.fill();
+                            });
+                        });
+                    }
+                    requestAnimationFrame(runDetection);
+                }
+                runDetection();
+            });
+        }
+
+        loadModel().then(model => {
+            detectHands(model);
+        });
+    </script>
+</body>
+</html>

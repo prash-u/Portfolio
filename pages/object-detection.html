@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <Here is the complete and updated code for both the HTML and JavaScript files. This should ensure that the face expression model works correctly, and the body segmentation using BodyPix is also functional.
+
+### HTML (`object-detection.html`)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Object Detection</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+    <script src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="bio-tech.html">Bio-Tech Projects</a></li>
+                <li><a href="personal-projects.html">Personal Projects</a></li>
+                <li><a href="about.html">About me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="controls">
+        <select id="modelSelector">
+            <option value="mobilenet">MobileNet (Lightweight Model)</option>
+            <option value="coco-ssd" selected>COCO-SSD</option>
+            <option value="handpose">Hand Pose</option>
+            <option value="faceapi">Facial Expression</option>
+            <option value="bodypix">Body Segmentation</option>
+        </select>
+        <button id="startButton">Start Detection</button>
+        <button id="stopButton">Stop Detection</button>
+    </div>
+    <div class="video-container">
+        <video id="video" width="640" height="480" autoplay muted playsinline></video>
+        <canvas id="canvas" width="640" height="480"></canvas>
+    </div>
+    <div id="loadingIndicator">Loading model, please wait...</div>
+    <script src="../js/objectDetection.js"></script>
+</body>
+    <footer>
+        <p>Copyright © Prashant Umrekar. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#"><img src="/assets/icons/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="/assets/icons/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="/assets/icons/linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="/assets/icons/github.png" alt="GitHub"></a>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                autoplay: true,
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear'
+            });
+        });
+    </script>
+    </body>
+</html>
