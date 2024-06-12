@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gene Expression Analysis Tool</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="bio-tech.html">Bio-Tech Projects</a></li>
+                <li><a href="personal-projects.html">Personal Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Gene Expression Analysis Tool</h2>
+        <div id="instructions">
+            <p>Welcome to the Gene Expression Analysis Tool. Follow the steps below to visualize your genetic data:</p>
+            <ol>
+                <li>Prepare your gene expression data in a CSV file format.</li>
+                <li>The first row should contain gene names, with the first cell left empty.</li>
+                <li>The first column should contain sample names, with the first cell left empty.</li>
+                <li>Upload the CSV file using the input below.</li>
+                <li>Once uploaded, a heatmap will be generated to visualize the gene expression profiles.</li>
+            </ol>
+            <p>Example CSV format:</p>
+            <pre>
+Sample,Gene1,Gene2,Gene3
+Sample1,0.5,1.2,0.8
+Sample2,0.7,1.4,0.6
+Sample3,0.9,1.6,0.7
+            </pre>
+        </div>
+        <div id="control-panel">
+            <input type="file" id="fileInput" accept=".csv">
+        </div>
+        <div class="plot-container" id="heatmap" style="width: 90%; height: 500px;"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Prashant Umrekar. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://github.com/username"><img src="../assets/icons/github.png" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/prashant-umrekar/"><img src="../assets/icons/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/prashu_/"><img src="../assets/icons/instagram.png" alt="Instagram"></a>
+        </div>
+    </footer>
+    <script src="../js/gene-profile.js"></script>
+</body>
+</html>

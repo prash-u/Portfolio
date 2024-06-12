@@ -3,55 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EEG Visualization</title>
+    <title>EEG Graph</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/eeg-pipes@latest/dist/eeg-pipes.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/eeglib@latest/dist/eeglib.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../bio-tech-projects.html">Bio-Tech Projects</a></li>
-                <li><a href="../personal-projects.html">Personal Projects</a></li>
-                <li><a href="../about.html">About Me</a></li>
+                <li><a href="bio-tech.html">Bio-Tech Projects</a></li>
+                <li><a href="personal-projects.html">Personal Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section id="eeg-visualization">
-        <h2>EEG Visualization</h2>
-        <div id="eeg-container"></div>
-        <div id="eeg-info"></div>
-    </section>
+    <main>
+        <h2>EEG Graphing Demo</h2>
+        <div id="instructions">
+            <p>Welcome to the EEG Graphing Demo. Follow the steps below to visualize EEG data:</p>
+            <ol>
+                <li>Click the "Start Data Stream" button to begin simulating EEG data.</li>
+                <li>Click the "Stop Data Stream" button to stop the data simulation.</li>
+                <li>To use your own data, prepare your EEG data in a CSV file format.</li>
+                <li>The first row should contain time stamps, with subsequent rows containing EEG channel data.</li>
+                <li>Upload the CSV file using the input below.</li>
+                <li>Once uploaded, the time series, FFT plot, and head plot will update to reflect your data.</li>
+            </ol>
+            <p>Example CSV format:</p>
+            <pre>
+Time,Channel1,Channel2,Channel3,Channel4,Channel5,Channel6,Channel7,Channel8
+0,0.5,1.2,0.8,0.9,1.1,0.7,0.6,0.4
+1,0.7,1.4,0.6,0.8,1.3,0.8,0.5,0.3
+2,0.9,1.6,0.7,0.7,1.5,0.9,0.4,0.2
+            </pre>
+        </div>
+        <div id="control-panel">
+            <button id="startButton">Start Data Stream</button>
+            <button id="stopButton">Stop Data Stream</button>
+            <input type="file" id="fileInput" accept=".csv">
+        </div>
+        <div class="plot-container" id="time-series" style="width: 90%; height: 400px;"></div>
+        <div class="plot-container" id="fft-plot" style="width: 90%; height: 400px;"></div>
+        <div class="plot-container" id="head-plot" style="width: 90%; height: 400px;"></div>
+    </main>
     <footer>
-        <p>© Prashant Umrekar. All Rights Reserved.</p>
+        <p>&copy; 2024 Prashant Umrekar. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://github.com/username"><img src="../assets/icons/github.png" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/prashant-umrekar/"><img src="../assets/icons/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/prashu_/"><img src="../assets/icons/instagram.png" alt="Instagram"></a>
+        </div>
     </footer>
-
-    <script>
-        // Assuming you have the EEG data loaded as an array
-        // Replace this example data with actual EEG data
-        const eegData = [
-            // Simulated EEG data
-            [0, 0.1, 0.2, 0.3, 0.4],
-            [0, 0.2, 0.4, 0.6, 0.8]
-        ];
-
-        // Using eeg-pipes to filter and process EEG data
-        const eegPipe = new EEGPipes(eegData);
-        eegPipe.filter({ type: 'bandpass', cutoffFrequencies: [1, 30] });
-
-        // Visualizing EEG data
-        const eegContainer = document.getElementById('eeg-container');
-        const eegPlot = new EEGPlot(eegPipe.data);
-        eegPlot.render(eegContainer);
-
-        // Display additional EEG info
-        const eegInfo = document.getElementById('eeg-info');
-        eegInfo.innerHTML = `
-            <p>Sampling Frequency: ${eegPipe.samplingFrequency}</p>
-            <p>Channels: ${eegPipe.channels.join(', ')}</p>
-        `;
-    </script>
+    <script src="../js/eeg.js"></script>
 </body>
 </html>

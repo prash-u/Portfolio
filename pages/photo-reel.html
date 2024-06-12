@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Prashant Umrekar</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Instagram Photo Reel - Prashant Umrekar</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+        .photo-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .photo-grid img:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,30 +35,30 @@
             </ul>
         </nav>
     </header>
-    <section id="about-me">
-        <h1>About Me</h1>
-        <img src="/assets/images/profile.jpg" alt="Your Name" style="width:200px;height:200px;">
-        <p>Hello! I'm Your Name, a passionate Bio-Tech enthusiast with a deep interest in EEG visualization and gene profiling. With a background in biomedical engineering, I've dedicated my career to developing innovative solutions that enhance our understanding of complex biological systems.</p>
-        <p>Currently, I'm focused on leveraging cutting-edge technologies to explore new frontiers in medical research and healthcare applications.</p>
-    </section>
-    <section id="skills">
-        <h2>Skills & Expertise</h2>
-        <ul>
-            <li>EEG Data Analysis</li>
-            <li>Gene Expression Profiling</li>
-            <li>Machine Learning</li>
-            <li>Python & R Programming</li>
-            <li>Data Visualization</li>
-        </ul>
-    </section>
-    <section id="professional-links">
-        <h2>Connect with Me</h2>
-        <a href="https://www.linkedin.com/in/your-linkedin-id">LinkedIn</a>
-        <a href="https://github.com/your-github-id">GitHub</a>
-        <!-- Add other social links as needed -->
+    <section id="photo-reel">
+        <h1>Instagram Photo Reel</h1>
+        <p>Welcome to my Instagram photo reel. Here are some of my favorite moments captured through my lens. Follow me on <a href="https://www.instagram.com/prashu_/" target="_blank">Instagram</a> for more updates.</p>
+        <div class="photo-grid">
+            <!-- Add your photos here -->
+            <img src="../assets/images/photo1.jpg" alt="Photo 1">
+            <img src="../assets/images/photo2.jpg" alt="Photo 2">
+            <img src="../assets/images/photo3.jpg" alt="Photo 3">
+            <img src="../assets/images/photo4.jpg" alt="Photo 4">
+            <img src="../assets/images/photo5.jpg" alt="Photo 5">
+            <img src="../assets/images/photo6.jpg" alt="Photo 6">
+            <img src="../assets/images/photo7.jpg" alt="Photo 7">
+            <img src="../assets/images/photo8.jpg" alt="Photo 8">
+            <!-- Add more photos as needed -->
+        </div>
     </section>
     <footer>
-        <p>Copyright © Your Name. All Rights Reserved.</p>
+        <p>Copyright © 2024 Prashant Umrekar. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/prashu_/"><img src="../assets/icons/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="../assets/icons/twitter.png" alt="Twitter"></a>
+            <a href="https://www.linkedin.com/in/prashant-umrekar/"><img src="../assets/icons/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://github.com/username"><img src="../assets/icons/github.png" alt="GitHub"></a>
+        </div>
     </footer>
 </body>
 </html>
